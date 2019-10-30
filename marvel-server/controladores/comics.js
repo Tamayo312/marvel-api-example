@@ -89,7 +89,7 @@ function modificarComic (req, res){
     comic.title = params.title;
     Comic.findOneAndUpdate(
         {'_id': req.params.idComic}, {$set: {'title': comic.title}},
-        (err, comicActualizado) => {
+        (err, listadoComics, comicActualizado) => {
             if(err){
                 res.status(500).send({
                     message: 'Error al modificar comic'

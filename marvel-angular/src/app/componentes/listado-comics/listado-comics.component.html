@@ -7,7 +7,14 @@
           <h2 class="card-title">{{comic.title}}</h2>
           <h5 class="card-text">Número: {{comic.issueNumber}}</h5>
           <h5 class="card-text">Nº de páginas: {{comic.pages}}</h5>
-          <h5 class="card-text">¿Leído? -> {{comic.leido}}</h5>
+          <h5 class="card-text">¿Leído?
+            <div *ngIf="checkLeido(comic._id) === true; else noleido">
+              <i class="fas fa-check"></i>
+            </div>
+            <ng-template #noleido>
+              <i class="fas fa-times"></i>
+            </ng-template>
+          </h5> 
           <!--<p class="card-text">{{comic.description}}</p>-->
             <!--<ng-container *ngFor="let price of comic.prices">
               <small class="text-bold">${{price.price}}</small>

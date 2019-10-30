@@ -34,4 +34,12 @@ export class ListadoComicsComponent implements OnInit {
     this.apiService.eliminarComic(idComic)
       .subscribe((this.comics[posicion]));
   }
+  checkLeido(comicId){
+    const posicion = this.comics.findIndex( i => i._id === comicId);
+    if(this.comics[posicion].leido === true){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
