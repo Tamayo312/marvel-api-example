@@ -1,0 +1,9 @@
+<main role = 'main'>
+  <ng-container *ngFor="let comic of comic">
+    <img src="{{comic.img}}/portrait_uncanny.jpg" class="card-img-top" alt="...">
+    <h2 class="card-title">{{comic.title}}</h2>
+    <h5 class="card-text">Número: {{comic.issueNumber}}</h5>
+    <h5 class="card-text">Nº de páginas: {{comic.pages}}</h5>
+    <p class="card-text">{{comic.description}}</p>
+  </ng-container>
+</main>

@@ -1,0 +1,17 @@
+<div class="card">
+  <div *ngFor="let personaje of personaje.results">
+    <div class="card-header">
+        <h1>{{personaje.name}}</h1>
+    </div>
+    <div class="card-body text-center">
+      <img src ="{{personaje.thumbnail.path}}/portrait_uncanny.jpg" class="pt-5">
+      <p class="card-text pt-5">{{personaje.description}}</p>
+      <a routerLink="/characters"class="text-muted">Volver</a>
+    </div>
+    <h2>Series en las que aparece {{personaje.name}}</h2>
+  </div>
+</div>
+
+<app-series-por-personaje></app-series-por-personaje>
+<router-outlet></router-outlet>
+

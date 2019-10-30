@@ -1,0 +1,35 @@
+<main role="main">
+    <div class = "album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <ng-container *ngFor="let comic of comics.results">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                    <img src="{{comic.thumbnail.path}}/portrait_uncanny.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title">{{comic.title}}</h2>
+                  <!--<p class="card-text">{{comic.description}}</p>-->
+                    <ng-container *ngFor="let price of comic.prices">
+                      <small class="text-bold">${{price.price}}</small>
+                    </ng-container>
+                  </div>
+                  <div class="d-flex flex-row-reverse align-items-center">
+                    <button class="btn btn-primary btn-sm" data-toggle="button" (click)="anadirComic(comic)">Añadir a Favoritos</button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+        <a routerLink="/comics"class="text-muted">Arriba</a>
+    </p>
+  </div>
+</footer>
+
+
+

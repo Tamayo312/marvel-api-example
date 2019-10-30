@@ -1,0 +1,31 @@
+<a name="arriba"></a>
+<main role="main">
+    <div class = "album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <ng-container *ngFor="let creator of creators.results">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                    <img src="{{creator.thumbnail.path}}/portrait_uncanny.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h2 class="card-title">{{creator.name}}</h2>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a routerLink="/characters/{{creator.id}}"class="text-muted">Ver</a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+</main>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+        <a routerLink="/characters" class="text-muted">Arriba</a>
+    </p>
+  </div>
+</footer>

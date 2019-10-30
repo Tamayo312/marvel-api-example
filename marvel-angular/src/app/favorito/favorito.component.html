@@ -1,0 +1,26 @@
+<main role="main">
+  <div class="d-flex flex-row-reverse align-items-center">
+    <button class="btn btn-primary btn-sm" data-toggle="button" (click)="eliminar()">Eliminar favoritos</button>
+  </div>
+  <div class = "album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <ng-container *ngFor="let fav of favoritos">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img src="{{fav.thumbnail.path}}/portrait_incredible.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h2 class="card-title">{{fav.title}}</h2>
+                <p class="card-text">{{fav.description}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">{{fav.stories.available}} números</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</main>
+
