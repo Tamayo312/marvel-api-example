@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 
 
 
-const PrivateKey = '7f5f3d2a2c5ced8d507867c2477699c82cf93ab6';
-const PublicKey = '7e6ebf4f236b3f7cc478e8ca54e259f1';
+const PrivateKey = 'insert-private-apikey';
+const PublicKey = 'insert-public-apikey';
 const TimeStamp = new Date().getTime();
 const hash = Md5.hashStr(TimeStamp + PrivateKey + PublicKey);
 
