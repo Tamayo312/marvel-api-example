@@ -1,35 +1,39 @@
 <main role = 'main'>
-  <ng-container *ngFor = "let comic of comics">
-    <div class="col-md-4">
-      <div class="card mb-4 shadow-sm">
-          <img src="{{comic.img}}/portrait_uncanny.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2 class="card-title">{{comic.title}}</h2>
-          <h5 class="card-text">Número: {{comic.issueNumber}}</h5>
-          <h5 class="card-text">Nº de páginas: {{comic.pages}}</h5>
-          <h5 class="card-text">¿Leído?
-            <div *ngIf="checkLeido(comic._id) === true; else noleido">
-              <i class="fas fa-check"></i>
+  <div class="container p">
+    <div class="row">
+      <ng-container *ngFor = "let comic of comics">
+        <div class="col-lg-4 d-flex align-items-stretch">
+          <div class="card mb-4 shadow-sm">
+              <img src="{{comic.img}}/portrait_uncanny.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title">{{comic.title}}</h2>
+              <h5 class="card-text">Número: {{comic.issueNumber}}</h5>
+              <h5 class="card-text">Nº de páginas: {{comic.pages}}</h5>
+              <h5 class="card-text">¿Leído?
+                <div *ngIf="checkLeido(comic._id) === true; else noleido">
+                  <i class="fas fa-check"></i>
+                </div>
+                <ng-template #noleido>
+                  <i class="fas fa-times"></i>
+                </ng-template>
+              </h5> 
+              <!--<p class="card-text">{{comic.description}}</p>-->
+                <!--<ng-container *ngFor="let price of comic.prices">
+                  <small class="text-bold">${{price.price}}</small>
+                </ng-container>-->
             </div>
-            <ng-template #noleido>
-              <i class="fas fa-times"></i>
-            </ng-template>
-          </h5> 
-          <!--<p class="card-text">{{comic.description}}</p>-->
-            <!--<ng-container *ngFor="let price of comic.prices">
-              <small class="text-bold">${{price.price}}</small>
-            </ng-container>-->
+            <div class="d-flex flex-row-reverse align-items-center">
+              <button class="btn btn-primary btn-lg btn-block" data-toggle="button"><a routerLink="/lista/{{comic._id}}"class="text-white">Ver</a></button>
+            </div>
+            <div class="d-flex flex-row-reverse align-items-center">
+              <button class="btn btn-primary btn-lg btn-block" data-toggle="button" (click)="modificarComic(comic._id)">Marcar cómo leído</button>
+            </div>
+            <div class="d-flex flex-row-reverse align-items-center">
+                <button class="btn btn-primary btn-lg btn-block" data-toggle="button" (click)="eliminarComic(comic._id)">Eliminar de la lista</button>
+            </div>
+          </div>
         </div>
-          <div class="d-flex flex-row-reverse align-items-center">
-            <button class="btn btn-primary btn-lg btn-block" data-toggle="button"><a routerLink="/lista/{{comic._id}}"class="text-white">Ver</a></button>
-          </div>
-          <div class="d-flex flex-row-reverse align-items-center">
-            <button class="btn btn-primary btn-lg btn-block" data-toggle="button" (click)="modificarComic(comic._id)">Marcar cómo leído</button>
-          </div>
-          <div class="d-flex flex-row-reverse align-items-center">
-              <button class="btn btn-primary btn-lg btn-block" data-toggle="button" (click)="eliminarComic(comic._id)">Eliminar de la lista</button>
-          </div>
-      </div>
+      </ng-container>
     </div>
-  </ng-container>
+  </div>
 </main>
