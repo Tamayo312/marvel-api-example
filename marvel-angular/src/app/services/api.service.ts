@@ -21,7 +21,7 @@ export class ApiService {
 
   allHeroes() {
     console.log('conseguido');
-    const url = 'http://gateway.marvel.com/v1/public/comics?formatType=collection&orderBy=modified' +
+    const url = 'http://gateway.marvel.com/v1/public/comics?formatType=collection&orderBy=onsaleDate' +
       '&ts=' + TimeStamp + '&limit=25&apikey=' + PublicKey
     + '&hash=' + hash;
     return this.http.get(url)
